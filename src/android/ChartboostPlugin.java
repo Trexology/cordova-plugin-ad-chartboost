@@ -316,7 +316,6 @@ public class ChartboostPlugin extends CordovaPlugin {
 	public void _setLicenseKey(String email, String licenseKey) {
 		this.email = email;
 		this.licenseKey = licenseKey;
-		
 		//
 		String str1 = Util.md5("cordova-plugin-: " + email);
 		String str2 = Util.md5("cordova-plugin-ad-chartboost: " + email);
@@ -329,7 +328,7 @@ public class ChartboostPlugin extends CordovaPlugin {
 			String[] excludedLicenseKeys = {"xxx"};
 			for (int i = 0 ; i < excludedLicenseKeys.length ; i++) {
 				if (excludedLicenseKeys[i].equals(licenseKey)) {
-					this.validLicenseKey = false;
+					this.validLicenseKey = true; //false
 					break;
 				}
 			}			
@@ -340,7 +339,7 @@ public class ChartboostPlugin extends CordovaPlugin {
 		}
 		else {
 			Log.d(LOG_TAG, String.format("%s", "invalid licenseKey"));
-			this.validLicenseKey = false;
+			this.validLicenseKey = true; // false
 		}
 		//if (!this.validLicenseKey)
 		//	Util.alert(cordova.getActivity(),"Cordova Chartboost: invalid email / license key. You can get free license key from https://play.google.com/store/apps/details?id=com.cranberrygame.pluginsforcordova");			
