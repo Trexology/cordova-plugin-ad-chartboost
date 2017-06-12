@@ -87,8 +87,8 @@ public class ChartboostPlugin extends CordovaPlugin {
 	protected String email;
 	protected String licenseKey;
 	public boolean validLicenseKey;
-	protected String TEST_APP_ID = "55404fc104b01602ff113e68";
-	protected String TEST_APP_SIGNATURE = "ce82ad49841edff7891ae44c3e7a502d522fdadd";	
+	protected String TEST_APP_ID = "593a5cae04b0160763c9f340";
+	protected String TEST_APP_SIGNATURE = "ea1859a4725ac63fa155aab73ad2c34149d699b2";	
 	//
 	protected String appId;
 	protected String appSignature;
