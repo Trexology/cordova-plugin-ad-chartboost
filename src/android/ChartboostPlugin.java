@@ -15,6 +15,7 @@ import org.apache.cordova.CordovaWebView;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.util.Log;
+import com.google.android.gms:play-services-ads:8.4.0;
 //
 import com.chartboost.sdk.Chartboost;
 import com.chartboost.sdk.ChartboostDelegate;
