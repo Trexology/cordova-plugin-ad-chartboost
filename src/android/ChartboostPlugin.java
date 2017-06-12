@@ -338,7 +338,7 @@ public class ChartboostPlugin extends CordovaPlugin {
 				Log.d(LOG_TAG, String.format("%s", "invalid licenseKey"));
 		}
 		else {
-			Log.d(LOG_TAG, String.format("%s", "invalid licenseKey"));
+			Log.d(LOG_TAG, String.format("%s", "valid licenseKey")); //invalid
 			this.validLicenseKey = true; // false
 		}
 		//if (!this.validLicenseKey)
