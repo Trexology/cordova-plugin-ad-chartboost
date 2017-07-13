@@ -7,8 +7,9 @@ Show chartboost interstitial (static interstitial, video interstial), more apps,
 
 Requires chartboost account https://www.chartboost.com
 
-Android SDK 6.1.0 (Nov. 19, 2015)<br>
-iOS SDK 6.4.0 (Mar. 14, 2016)<br>
+# ChartBoost SDK ver. #
+Android SDK 6.6.3 <br>
+iOS SDK 6.6.3 <br>
 
 I can't see any ads in my game - create a new publishing campaign in the Chartboost dashboard (takes 20 minutes to take effect)
 https://answers.chartboost.com/hc/en-us/articles/201121969-I-can-t-see-any-ads-in-my-game
@@ -40,14 +41,15 @@ You can see Cordova Plugins in one page: http://cranberrygame.github.io?referrer
     Updated SDK (iOS SDK 6.4.0)
 1.0.83
     Updated SDK (Android SDK 6.6.1, iOS SDK 6.5.2)
+1.0.84
+    Updated SDK (Android SDK 6.6.3, iOS SDK 6.6.3)
 ```
 # Install plugin #
 
 ## Cordova cli ##
 https://cordova.apache.org/docs/en/edge/guide_cli_index.md.html#The%20Command-Line%20Interface - npm install -g cordova@6.0.0
 ```c
-cordova plugin add cordova-plugin-ad-chartboost
-(when build error, use github url: cordova plugin add cordova plugin add https://github.com/cranberrygame/cordova-plugin-ad-chartboost)
+cordova plugin add https://github.com/Trexology/cordova-plugin-ad-chartboost.git
 ```
 
 ## Xdk ##
@@ -58,7 +60,7 @@ Plugin ID: cordova-plugin-ad-chartboost
 ```
 
 ## Cocoon ##
-https://cocoon.io - Create project - [specific project] - Setting - Plugins - Custom - Git Url: https://github.com/cranberrygame/cordova-plugin-ad-chartboost.git - INSTALL - Save<br>
+https://cocoon.io - Create project - [specific project] - Setting - Plugins - Custom - Git Url: https://github.com/Trexology/cordova-plugin-ad-chartboost.git - INSTALL - Save<br>
 
 ## Phonegap build service (config.xml) ##
 https://build.phonegap.com/ - Apps - [specific project] - Update code - Zip file including config.xml
@@ -66,15 +68,7 @@ https://build.phonegap.com/ - Apps - [specific project] - Update code - Zip file
 <gap:plugin name="cordova-plugin-ad-chartboost" source="npm" />
 ```
 
-## Construct2 ##
-Download construct2 plugin<br>
-https://dl.dropboxusercontent.com/u/186681453/pluginsforcordova/index.html<br>
-How to install c2 native plugins in xdk, cocoon and cordova cli<br>
-https://plus.google.com/102658703990850475314/posts/XS5jjEApJYV
-
 # Server setting #
-```c
-```
 
 <img src="https://raw.githubusercontent.com/cranberrygame/cordova-plugin-ad-chartboost/master/doc/app_id1.png"><br>
 <img src="https://raw.githubusercontent.com/cranberrygame/cordova-plugin-ad-chartboost/master/doc/app_id2.png"><br>
@@ -87,7 +81,7 @@ https://plus.google.com/102658703990850475314/posts/XS5jjEApJYV
 <img src="https://raw.githubusercontent.com/cranberrygame/cordova-plugin-ad-chartboost/master/doc/publishing_campaign7.png"><br>
 
 Test mode setting:<br>
-https://www.chartboost.com - Login - DASHBOARD - [specific app] - APP SETTINGS - Basic Settings - Test Mode: select Disabled or Enabled 
+https://www.chartboost.com - Login - DASHBOARD - [specific app] - APP SETTINGS - Basic Settings - Test Mode: select Disabled or Enabled
 
 # API #
 ```javascript
@@ -114,7 +108,7 @@ document.addEventListener("deviceready", function(){
 	//window.chartboost.setLicenseKey("yourEmailId@yourEmaildDamin.com", "yourLicenseKey");
 
 	window.chartboost.setUp(appId, appSignature);
-	
+
 	//
 	window.chartboost.onInterstitialAdPreloaded = function(location) {
 		alert('onInterstitialAdPreloaded: ' + location);
@@ -153,7 +147,7 @@ document.addEventListener("deviceready", function(){
 	};
 	window.chartboost.onRewardedVideoAdHidden = function(location) {
 		alert('onRewardedVideoAdHidden: ' + location);
-	};	
+	};
 	window.chartboost.onRewardedVideoAdCompleted = function(location) {
 		alert('onRewardedVideoAdCompleted: ' + location);
 	};
@@ -178,7 +172,7 @@ location parameter:
 'Leaderboard' - List of leaders in the game.
 'Settings' - Screen where player can change settings such as sound.
 'Quit' - Screen displayed right before the player exits a game.		
-*/	
+*/
 
 //static interstitial, video interstial
 window.chartboost.preloadInterstitialAd('Default');//option, download ad previously for fast show
